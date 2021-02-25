@@ -1,0 +1,279 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.promo-valentines {
+	position: fixed;
+	top: 50%;
+	left: 0px;
+	height: 100vh;
+}
+
+.heart-wrap {
+	position: absolute;
+	left: 60px;
+	width: 105px;
+	height: 105px;
+	transform: translate(-50%,-50%) rotate(45deg);
+	border-radius: 50%;
+	box-shadow: 0 0 8px 2px blue;
+	background-color: #FEDEF8;
+	cursor: pointer;
+	animation: pulsing 1s infinite alternate, sizeup 4.5s infinite;
+	transition: 1s;
+}
+
+.heart {
+	position: absolute;
+	top: 55%;
+	left: 55%;
+	transform: translate(-50%,-50%);
+	height: 42px;
+	width: 42px;
+	background-color: #FA1E96;
+	box-shadow: 0 0 1.5px 0.3px #FA1E96;
+}
+
+.heart::before {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 50%;
+	transform: translate(-100%,-50%);
+	height: 42px;
+	width: 42px;
+	background-color: #FA1E96;
+	border-radius: 50%;
+	box-shadow: 0 0 1.5px 0.3px #FA1E96;
+}
+
+.heart::after {
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-100%);
+	height: 42px;
+	width: 42px;
+	background-color: #FA1E96;
+	border-radius: 50%;
+	box-shadow: 0 0 1.5px 0.3px #FA1E96;
+}
+
+.modal-valentines {
+	position: absolute;
+	left: -1500px;
+	height: 400px;
+	width: 400px;
+	background: url('valentines.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform: translate(-80px,-50%);
+	border-radius: 30px;
+	box-shadow: 0 0 5px 2px #FA6282;
+	transition: 1s;
+}
+
+.close-btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-family: sans-serif;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	text-align: center;
+	box-shadow: 0 0 4px 1px #000;
+	text-shadow: 0.2px 0.2px black;
+	background: linear-gradient(to bottom, #fff, #ddd);
+	line-height: 20px;
+	transform: translateY(-20%);
+	cursor: pointer;
+}
+
+.button-valentines {
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: transparent;
+	border: none;
+	box-shadow: 0 0 2px 2px #FA6282;
+	padding: 5px 15px;
+	font-size: 14px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: 0.3s background, 0.3s color;
+}
+
+.button-valentines a {
+	text-decoration: none;
+	color: #000;
+}
+
+.button-valentines:hover {
+	background: #FA6282;
+	color: #fff;
+}
+
+@media (max-width: 1024px) {
+	.modal-valentines {
+		height: 300px;
+		width: 300px;
+	}
+
+	.heart-wrap {
+		height: 90px;
+		width: 90px;
+	}
+
+	.heart {
+		height: 36px;
+		width: 36px;
+	}
+
+	.heart::before {
+		height: 36px;
+		width: 36px;
+	}
+
+	.heart::after {
+		height: 36px;
+		width: 36px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.modal-valentines {
+		height: 270px;
+		width: 270px;
+	}
+
+	.heart-wrap {
+		height: 72px;
+		width: 72px;
+	}
+
+	.heart {
+		height: 30px;
+		width: 30px;
+	}
+
+	.heart::before {
+		height: 30px;
+		width: 30px;
+	}
+
+	.heart::after {
+		height: 30px;	
+		width: 30px;
+	}
+}
+
+@media (max-width: 425px) {
+	.heart-wrap {
+		top: 42%;
+		left: 35px;
+		height: 58px;
+		width: 58px;
+	}
+
+	.heart {
+		height: 24px;
+		width: 24px;
+	}
+
+	.heart::before {
+		height: 24px;
+		width: 24px;
+	}
+
+	.heart::after {
+		height: 24px;
+		width: 24px;
+	}
+}
+
+@media (max-width: 375px) {
+	.heart-wrap {
+		top: 42%;
+		left: 30px;
+		height: 47px;
+		width: 47px;
+	}
+
+	.heart {
+		height: 19px;
+		width: 19px;
+	}
+
+	.heart::before {
+		height: 19px;
+		width: 19px;
+	}
+
+	.heart::after {
+		height: 19px;
+		width: 19px;
+	}
+}
+
+
+@keyframes pulsing {
+	0% {
+		box-shadow: 0 0 8px 2px #FA1E96;
+	}
+
+	100% {
+		box-shadow: 0 0 30px 2px #FA1E96;
+	}
+}
+
+@keyframes sizeup {
+	3% {
+		transform: translate(-50%,-50%) rotate(75deg);
+	}
+	6% {
+		transform: translate(-50%,-50%) rotate(15deg);
+	}
+	9% {
+		transform: translate(-50%,-50%) rotate(45deg);
+	}
+}
+
+</style>
+</head>
+
+<body>
+	<div class="promo-valentines">
+		<div class="modal-valentines">
+			<div class="close-btn">x</div>
+			<button class="button-valentines">
+				<a href="https://cudmoda.pl/kategoria?new=1">odkryj</a>
+			</button>
+		</div>
+		<div class="heart-wrap">
+			<div class="heart"></div>
+		</div>
+
+<script>
+const heartWrap = document.querySelector('.heart-wrap');
+const closeBtn = document.querySelector('.close-btn');
+const modalValentines = document.querySelector('.modal-valentines');
+
+heartWrap.addEventListener('click', function() {
+	modalValentines.style.left = '100px';
+	heartWrap.style.left = '-1500px';
+	
+	closeBtn.addEventListener('click', function() {
+		modalValentines.style.left = '-1500px';
+		heartWrap.style.left = '60px';
+	});
+});
+</script>
+</body>
+</html>
